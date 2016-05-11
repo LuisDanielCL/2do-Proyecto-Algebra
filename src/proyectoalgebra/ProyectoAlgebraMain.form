@@ -77,6 +77,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Aplicaci&#xf3;n 4"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton4ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

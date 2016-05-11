@@ -10,6 +10,7 @@
  */
 package Matriz;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -68,6 +69,8 @@ public class Matriz {
                 for (int j = 0; j < matriz[0].length; j++) {
                     if (i == j) {
                         matriz[i][j] = 1;
+                    }else{
+                        matriz[i][j] = 0;
                     }
                 }
             }
@@ -95,5 +98,12 @@ public class Matriz {
             }
         }
     }
-
+    
+    float[] getColumna (int columna){
+        float[] respuesta = new float[this.largoColumna()];
+        for (int i = 0; i < this.largoColumna(); i++){
+            respuesta[i] = this.getElement(i, columna);
+        }
+        return respuesta;
+    }
 }

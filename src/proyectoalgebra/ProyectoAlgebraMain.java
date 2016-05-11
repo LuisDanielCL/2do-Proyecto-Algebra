@@ -7,6 +7,7 @@ package proyectoalgebra;
 
 import Aplicacion2.mainApp2;
 import Aplicacion2.mainApp3;
+import Aplicacion2.mainApp4;
 
 /**
  *
@@ -54,6 +55,11 @@ public class ProyectoAlgebraMain extends javax.swing.JFrame {
         });
 
         jToggleButton4.setText("Aplicación 4");
+        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,6 +102,12 @@ public class ProyectoAlgebraMain extends javax.swing.JFrame {
         this.setVisible(false);
         main.setVisible(true);
     }//GEN-LAST:event_jToggleButton3ActionPerformed
+
+    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
+        mainApp4 main = new mainApp4 (this);
+        this.setVisible(false);
+        main.setVisible(true);
+    }//GEN-LAST:event_jToggleButton4ActionPerformed
 
     /**
      * @param args the command line arguments
