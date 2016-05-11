@@ -20,6 +20,7 @@ public class InversaLU {
     Matriz inversa;
     Matriz identidad;
     double[] respuestas;
+    String pasoApaso = "";
 
    
 public InversaLU(){
@@ -38,45 +39,45 @@ public void calcInversa (Matriz pmatrizA){
         ResolverSistemas resolver = new ResolverSistemas();
 
         for (int i = 0; i < inversa.largoColumna(); i++){
-            System.out.println("--------------------");
-            System.out.println("Vamos a encontrar la columna: " + i + " de la matriz inversa");
-            System.out.println("Sacamos la columna: " + i + " de la matriz identidad");
-            System.out.println("MatrizL * (z1,z2..zn) = columnaIdentidad");
-            System.out.print(matrizL.toString()+ "  * (z1,z2...zn) = ");
+            pasoApaso += "--------------------" + "\n";
+            pasoApaso += "Vamos a encontrar la columna: " + i + " de la matriz inversa" + "\n";
+            pasoApaso +="Sacamos la columna: " + i + " de la matriz identidad" + "\n";
+            pasoApaso += "MatrizL * (z1,z2..zn) = columnaIdentidad" + "\n";
+            pasoApaso += matrizL.toString()+ "  * (z1,z2...zn) = ";
+            pasoApaso += "[";
             float[] columnaIdentidad = identidad.getColumna(i);
-            String columna = "[";
             for (int m = 0; m < columnaIdentidad.length; m++){
-                System.out.print(columnaIdentidad[m] + ",");
+                pasoApaso +=(columnaIdentidad[m] + ",");
             }
-            System.out.print("]" + "\n");
-            System.out.println("Se resuelve el sistema de ecuaciones...");
+            pasoApaso += "]" + "\n";
+            pasoApaso += "Se resuelve el sistema de ecuaciones..." + "\n";
             resolver.resolver(matrizL, matrizU, columnaIdentidad);
            
             float[] respuestas = resolver.getArrayY();
-            System.out.println("Las respuestas son: ");
+            pasoApaso += "Las respuestas son: " + "\n";
             for (int n = 0; n < respuestas.length; n++){
-                System.out.println(respuestas[n]);
+                pasoApaso +=respuestas[n] + "\n";
             }
-            System.out.println("Ahora se calcula la columna de la matriz inversa con: U * columnaInversa = (z1,z2...zn)");
-            System.out.print(matrizU.toString() + "   * (I^-1 " + i + "1... + " + "I^-1 " + i + "n = " );
+            pasoApaso += "Ahora se calcula la columna de la matriz inversa con: U * columnaInversa = (z1,z2...zn)" + "\n";
+            pasoApaso += matrizU.toString() + " * (I^-1 " + i + "1... + " + "I^-1 " + i + "n = " + "\n";
             String respuesta = "[";
             for (int y = 0; y < respuestas.length; y++){
                 respuesta += respuestas[y] + ",";
             }
             respuesta += "]" + "\n";
-            System.out.print(respuesta);
-            System.out.println("Se resuelve el nuevo sistema de ecuaciones");
+            pasoApaso += respuesta;
+            pasoApaso += "Se resuelve el nuevo sistema de ecuaciones" + "\n";
             
             float[] respuestas2 = resolver.getArrayX();
-            System.out.println("Las respuestas son: ");
+            pasoApaso += "Las respuestas son: ";
             
             for (int k = 0; k < respuestas2.length;k++){
-                System.out.println(respuestas2[k]);
+                pasoApaso += respuestas2[k] + "\n";
                 inversa.setElement(k, i, respuestas2[k]);
             }
         }
-        System.out.println("La matriz inversa resultado es: ");
-        System.out.println(inversa.toString());
+        pasoApaso += "La matriz inversa resultado es: " + "\n";
+        pasoApaso += inversa.toString() + "\n";
         
     }catch (Exception e){
        System.out.println(e);
@@ -85,6 +86,10 @@ public void calcInversa (Matriz pmatrizA){
 
 public Matriz getInversa(){
     return inversa;
+}
+
+public String getPasoApaso(){
+    return pasoApaso;
 }
 
 
