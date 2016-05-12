@@ -8,6 +8,7 @@ package Matriz;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -80,7 +81,7 @@ public void calcInversa (Matriz pmatrizA){
         pasoApaso += inversa.toString() + "\n";
         
     }catch (Exception e){
-       System.out.println(e);
+       JOptionPane.showMessageDialog(null, "La matriz inversa no se pudo calcular");
     }
 }
 
