@@ -128,13 +128,13 @@ public class mainApp3 extends javax.swing.JFrame {
         txtX.setRows(5);
         jScrollPane5.setViewportView(txtX);
 
-        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 80, 140));
+        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 180, 140));
 
         txtY.setColumns(20);
         txtY.setRows(5);
         jScrollPane6.setViewportView(txtY);
 
-        getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 80, 140));
+        getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, 170, 140));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -172,19 +172,19 @@ public class mainApp3 extends javax.swing.JFrame {
          float[] arrayY = resolvedor.getArrayY();
          float[] arrayX = resolvedor.getArrayX();
          
-         String StrY = "";
-         for (int i = 0; i < arrayY.length; i++) {
-             int num = i+1;
-            StrY += "Y" + num + ": " + arrayY[i]+"\n";
-        }
-         txtY.setText(StrY);
+//         String StrY = "";
+//         for (int i = 0; i < arrayY.length; i++) {
+//             int num = i+1;
+//            StrY += "Y" + num + ": " + arrayY[i]+"\n";
+//        }
+         txtY.setText(resolvedor.getPasoY());
          
-         String StrX = "";
-         for (int i = 0; i < arrayX.length; i++) {
-             int num = i+1;
-            StrX += "X" + num + ": " + arrayX[i]+"\n";
-        }
-         txtX.setText(StrX);
+//         String StrX = "";
+//         for (int i = 0; i < arrayX.length; i++) {
+//             int num = i+1;
+//            StrX += "X" + num + ": " + arrayX[i]+"\n";
+//        }
+         txtX.setText(resolvedor.getPasoX());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBActionPerformed
