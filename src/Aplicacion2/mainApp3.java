@@ -65,6 +65,7 @@ public class mainApp3 extends javax.swing.JFrame {
         txtX = new javax.swing.JTextArea();
         jScrollPane6 = new javax.swing.JScrollPane();
         txtY = new javax.swing.JTextArea();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 51));
@@ -136,6 +137,14 @@ public class mainApp3 extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, 170, 140));
 
+        jButton5.setText("Regresar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -199,6 +208,12 @@ public class mainApp3 extends javax.swing.JFrame {
         txtB.setText(StrB);
     }//GEN-LAST:event_btnBActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        ProyectoAlgebraMain main = new ProyectoAlgebraMain();
+        main.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -211,6 +226,7 @@ public class mainApp3 extends javax.swing.JFrame {
     private javax.swing.JButton btnB;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

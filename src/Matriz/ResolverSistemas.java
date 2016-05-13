@@ -52,10 +52,10 @@ public class ResolverSistemas {
     
     public void encontrarX(){
         arrayX[arrayX.length-1] = arrayY[arrayY.length-1]/matrizU.getElement(arrayY.length-1, arrayY.length-1);
-        pasoX += "X"+arrayX.length+" = "+arrayY[arrayY.length-1]+" / "+matrizU.getElement(arrayY.length-1, arrayY.length-1)+" = "+arrayX[arrayX.length-1];
+        pasoX += "X"+arrayX.length+" = "+arrayY[arrayY.length-1]+" / "+matrizU.getElement(arrayY.length-1, arrayY.length-1)+" = "+arrayX[arrayX.length-1]+"\n";
         int X = arrayX.length-1;
         for (int i = arrayY.length-2; i >= 0 ; i--) {
-            pasoX += "X"+X+" = (1 / "+matrizU.getElement(i, i)+") * ("+arrayY[i]+"\n";
+            pasoX += "X"+X+" = (1 / "+matrizU.getElement(i, i)+") * ("+arrayY[i];
             X--;
             float aux = arrayY[i];
             for (int j = arrayY.length-1; j > 0; j--) {
